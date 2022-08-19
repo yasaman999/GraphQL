@@ -19,10 +19,12 @@ export const typeDefs = gql`
         description : String!
         quantity : Int!
         price : Float!
-
+        categoryId : String!#in dakhele film nabood , khodemoon ezafe kardim
+        category : Category
     },
     type Category {
         id : String!
         name : String!
+        products : [Product!]!
     }
 `
