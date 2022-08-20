@@ -1,7 +1,7 @@
 
 export const products =  [  
     {
-        id : "1",
+        id : "1p",
         name : "book",
         description : "this is a psychology book",
         quantity : 10,
@@ -10,7 +10,7 @@ export const products =  [
       
     },
     {
-        id : "2",
+        id : "2p",
         name : "pencil",
         description : "this is a black pencil",
         quantity : 9,
@@ -18,7 +18,7 @@ export const products =  [
         categoryId:"1c"
     },
     {
-        id : "3",
+        id : "3p",
         name : "pen",
         description : "this is a blue pen",
         quantity : 5,
@@ -26,7 +26,7 @@ export const products =  [
         categoryId:"1c"
     },
     {
-        id : "5",
+        id : "4p",
         name : "backpack",
         description : "this is a red backpack",
         quantity : 8,
@@ -34,7 +34,7 @@ export const products =  [
         categoryId:"1c"
     },
     {
-        id : "6",
+        id : "5p",
         name : "scarf",
         description : "this is a pink scarf",
         quantity : 10,
@@ -42,7 +42,7 @@ export const products =  [
         categoryId:"2c"
     },
     {
-        id : "7",
+        id : "6p",
         name : "T-shirt",
         description : "this is a green T-shirt",
         quantity : 7,
@@ -50,7 +50,7 @@ export const products =  [
         categoryId:"2c"
     },
     {
-        id : "8",
+        id : "7p",
         name : "hat",
         description : "this is a gray hat",
         quantity : 4,

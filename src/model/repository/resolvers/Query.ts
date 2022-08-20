@@ -1,5 +1,5 @@
-import { categories } from "../../categories";
-import { products } from "../../products";
+import { categories } from "../../DB/categories";
+import { products } from "../../DB/products";
 export const Query = {
     color : () => "blue",
     colors : () => ["red", "blue", "black"],
