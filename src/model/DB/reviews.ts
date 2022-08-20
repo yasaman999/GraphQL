@@ -11,7 +11,7 @@ export const reviews = [
         id : "2r",
         title : "expensive",
         comment : "it is really expensive",
-        rating : 2,
+        rating : 4,
         productId : "1p"
 
     },
@@ -19,16 +19,16 @@ export const reviews = [
         id : "3r",
         title : "bad",
         comment : "it has bad quality",
-        rating : 1,
-        productId : "3p"
+        rating : 5,
+        productId : "1p"
 
     },
     {
         id : "4r",
         title : "worst",
         comment : "it was the worst product",
-        rating : 1,
-        productId : "6p"
+        rating : 4,
+        productId : "1p"
 
     }
 

@@ -1,5 +1,8 @@
 import { categories } from "../../DB/categories";
 import { products } from "../../DB/products";
+import { Product } from "./Product";
+import { calAvgRating } from "../calAvgRating";
+
 export const Query = {
     color : () => "blue",
     colors : () => ["red", "blue", "black"],
@@ -13,7 +16,11 @@ export const Query = {
         return filter ?
         filter.onSale ?
         products.filter(product => product.onSale) :
-        products.filter(product => !product.onSale) :
+        products.filter(product => !product.onSale) ?
+        [1, 2, 3, 4, 5].includes(filter.avgRating) ?
+        products.filter(product => calAvgRating(product) >= filter.avgRating):
+        console.log("avg rateing must be between 1 and 5"):
+        products:
         products
     },
     product : (parent : any, args : any, context : any) => {
