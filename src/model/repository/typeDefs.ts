@@ -7,13 +7,13 @@ export const typeDefs = gql`
         age : Int 
         score : Float
         isBlue : Boolean
-        products : [Product!]!
+        products (filter : filterProductInput): [Product!]!
         product (id : ID!) : Product
         categories : [Category!]!
         category (id : ID!) : Category
 
     },
-    type Product {
+    type Product  {
         id : String!
         name : String!
         description : String!
@@ -21,12 +21,13 @@ export const typeDefs = gql`
         price : Float!
         categoryId : String! # in dakhele film nabood , khodemoon ezafe kardim
         category : Category
+        onSale : Boolean!
         reviews :[Review!]
     },
     type Category {
         id : String!
         name : String!
-        products : [Product!]!
+        products (filter :filterProductInput): [Product!]!
     },
     type Review
     {
@@ -35,5 +36,10 @@ export const typeDefs = gql`
         comment : String!
         rating : Int!
         productId : String!
+    }
+
+    input filterProductInput
+    {
+        onSale : Boolean
     }
 `
