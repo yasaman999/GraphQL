@@ -10,5 +10,15 @@ export const Mutation = {
 
         categories.push(newCategory);
         return newCategory;
+    } , 
+
+    addProduct : (parent:any , {input}:any , {products}:Context)=>
+    {
+        const { name, description, quantity, price, onSale, categoryId} = input;
+        const newProduct ={
+            id : v4() ,name, description, quantity, price, onSale, categoryId
+        }
+        products.push(newProduct);
+        return newProduct;
     }
 }
