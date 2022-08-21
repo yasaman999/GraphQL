@@ -1,11 +1,13 @@
-import { categories } from "../../DB/categories";
-import { reviews } from "../../DB/reviews";
+// import { categories } from "../../DB/categories";
+// import { reviews } from "../../DB/reviews";
+import { Category } from "../../interfaces/CategoryInterface";
+import { Context } from "../../interfaces/ContexInterface";
+import { Review } from "../../interfaces/ReviewInterface";
 export const Product = {
-    category :(parent:any , args:any , context:any)=>{
-        return categories.find(category => category.id===parent.categoryId);
+    category :({categoryId}:any , args:any , {categories}:Context)=>{
+        return categories.find((category :Category)=> category.id===categoryId);
     },
-    reviews : (parent:any, args:any, context:any) => {
-        return reviews.filter(review => review.productId === parent.id)
-
+    reviews : ({id}:any, args:any, {reviews}:any) => {
+        return reviews.filter((review :Review)=> review.productId === id)
     }
 }

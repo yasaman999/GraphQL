@@ -1,4 +1,6 @@
-export const reviews = [
+import { Review } from "../interfaces/ReviewInterface";
+
+export const reviews : Review[] = [
     {
         id : "1r",
         title : "good",

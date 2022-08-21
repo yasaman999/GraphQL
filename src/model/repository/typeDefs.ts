@@ -38,9 +38,19 @@ export const typeDefs = gql`
         productId : String!
     }
 
+    type Mutation 
+    {
+        addCategory (input : addCategoryInput) : Category!
+    }
+
     input filterProductInput
     {
         onSale : Boolean,
         avgRating : Int
+    }
+
+    input addCategoryInput
+    {
+        name : String!
     }
 `
