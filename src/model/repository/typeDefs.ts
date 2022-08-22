@@ -42,6 +42,7 @@ export const typeDefs = gql`
     {
         addCategory (input : addCategoryInput) : Category!
         addProduct (input : addProductInput) : Product!
+        addReview (input : addReviewInput) : Review!
     }
 
     input filterProductInput
@@ -63,5 +64,13 @@ export const typeDefs = gql`
         price : Float!
         onSale : Boolean!
         categoryId : String! 
+    }
+
+    input addReviewInput
+    {
+        title : String!
+        comment : String!
+        rating : Int!
+        productId : String!
     }
 `

@@ -20,5 +20,13 @@ export const Mutation = {
         }
         products.push(newProduct);
         return newProduct;
+    },
+    addReview : (parent:any, {input}:any, {reviews}:Context) => {
+        const { title, comment, rating, productId } = input;
+        const newReview = {
+           id : v4(), title, comment, rating, productId 
+        }
+        reviews.push(newReview);
+        return newReview;
     }
 }
