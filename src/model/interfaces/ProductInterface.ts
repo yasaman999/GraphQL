@@ -6,5 +6,5 @@ export interface Product
     quantity : number;
     price : number;
     onSale : boolean;
-    categoryId : string;
+    categoryId : string | null ;
 }

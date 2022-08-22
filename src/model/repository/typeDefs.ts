@@ -19,7 +19,7 @@ export const typeDefs = gql`
         description : String!
         quantity : Int!
         price : Float!
-        categoryId : String! # in dakhele film nabood , khodemoon ezafe kardim
+        categoryId : String # in dakhele film nabood , khodemoon ezafe kardim
         category : Category
         onSale : Boolean!
         reviews :[Review!]
@@ -43,6 +43,7 @@ export const typeDefs = gql`
         addCategory (input : addCategoryInput) : Category!
         addProduct (input : addProductInput) : Product!
         addReview (input : addReviewInput) : Review!
+        deleteCategory (id : ID!) : Boolean!
     }
 
     input filterProductInput
