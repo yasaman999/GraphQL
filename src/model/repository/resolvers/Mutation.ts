@@ -58,6 +58,15 @@ export const Mutation = {
         const reviewIndex = reviews.findIndex((review :Review)=>review.id===id);
         reviews.splice(reviewIndex,1);
         return true;
+    },
+    updateCategory : (parent:any, {id, input}:any, {categories}:Context) => {
+        const categoryIndex = categories.findIndex((category:Category) =>
+        category.id === id)
+        categories[categoryIndex] = {
+            ...categories[categoryIndex],
+            ...input
+        }
+        return categories[categoryIndex];
     }
 
 }
