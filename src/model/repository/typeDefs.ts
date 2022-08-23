@@ -44,6 +44,7 @@ export const typeDefs = gql`
         addProduct (input : addProductInput) : Product!
         addReview (input : addReviewInput) : Review!
         deleteCategory (id : ID!) : Boolean!
+        deleteProduct (id : ID!) : Boolean!
     }
 
     input filterProductInput

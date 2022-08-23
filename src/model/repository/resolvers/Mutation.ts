@@ -1,7 +1,11 @@
 import { v4  } from "uuid"
+import { categories } from "../../DB/categories";
 import { products } from "../../DB/products";
+import { reviews } from "../../DB/reviews";
 import { Category } from "../../interfaces/CategoryInterface";
 import { Context } from "../../interfaces/ContexInterface";
+import { Product } from "../../interfaces/ProductInterface";
+import { Review } from "../../interfaces/ReviewInterface";
 // import { categories } from "../../DB/categories";
 // import { Category } from "./Category";
 export const Mutation = {
@@ -41,6 +45,13 @@ export const Mutation = {
         product.categoryId = null
         : product.categoryId = product.categoryId
     })
+        return true;
+    },
+    deleteProduct : (parent:any, { id }:any, {products}:Context) => {
+        const productIndex = products.findIndex((product:Product) => product.id === id);
+        products.splice(productIndex, 1);
+        const reviewIndex = reviews.findIndex((review:Review) => review.productId === id);
+        reviews.splice(reviewIndex, 1);
         return true;
     }
 
