@@ -61,12 +61,20 @@ export const Mutation = {
     },
     updateCategory : (parent:any, {id, input}:any, {categories}:Context) => {
         const categoryIndex = categories.findIndex((category:Category) =>
-        category.id === id)
+        category.id === id);
+        return (categoryIndex===-1) ?  null :
         categories[categoryIndex] = {
             ...categories[categoryIndex],
             ...input
         }
-        return categories[categoryIndex];
+    }, 
+    updateProduct :(parent:any, {id, input}:any, {products}:Context) => {
+        const productIndex = products.findIndex((product:Product) =>
+        product.id === id);
+        return (productIndex===-1) ? null : 
+        products[productIndex] = {
+            ...products[productIndex],
+            ...input
+        }
     }
-
 }
