@@ -76,5 +76,14 @@ export const Mutation = {
             ...products[productIndex],
             ...input
         }
+    },
+     updateReview :(parent:any, {id, input}:any, {reviews}:Context) => {
+        const reviewIndex = reviews.findIndex((review:Review) =>
+        review.id === id);
+        return (reviewIndex===-1) ? null : 
+        reviews[reviewIndex] = {
+            ...reviews[reviewIndex],
+            ...input
+        }
     }
 }

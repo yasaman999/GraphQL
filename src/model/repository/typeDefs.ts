@@ -48,6 +48,7 @@ export const typeDefs = gql`
         deleteReview (id : ID!) : Boolean!
         updateCategory (id : ID!, input : updateCategoryInput) : Category
         updateProduct (id : ID!, input : updateProductInput) : Product
+        updateReview (id : ID!, input : updateReviewInput) : Review
     }
 
     input filterProductInput
@@ -89,5 +90,14 @@ export const typeDefs = gql`
         quantity : Int!
         price : Float!
         onSale : Boolean!
+        categoryId : String
+    }
+    input updateReviewInput
+    {
+        title : String!
+        comment : String!
+        rating : Int!
+        productId : String!
+
     }
 `
