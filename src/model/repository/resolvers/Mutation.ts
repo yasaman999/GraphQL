@@ -53,6 +53,11 @@ export const Mutation = {
         const reviewIndex = reviews.findIndex((review:Review) => review.productId === id);
         reviews.splice(reviewIndex, 1);
         return true;
+    }, 
+    deleteReview : (parent:any, { id }:any, {reviews}:Context) => {
+        const reviewIndex = reviews.findIndex((review :Review)=>review.id===id);
+        reviews.splice(reviewIndex,1);
+        return true;
     }
 
 }
